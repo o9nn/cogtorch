@@ -2,6 +2,7 @@
 #include <sstream>
 #include <iomanip>
 #include <algorithm>
+#include <cstring>
 
 namespace ggnucash {
 namespace vdev {
@@ -52,8 +53,9 @@ const MemoryRegion* VirtualPCB::get_region(uint64_t addr) const {
 uint8_t VirtualPCB::read_memory(uint64_t addr) const {
     const MemoryRegion* region = get_region(addr);
     if (!region) {
-        throw std::runtime_error("Memory read fault: address 0x" + 
-                               std::to_string(addr) + " is not mapped");
+        std::ostringstream oss;
+        oss << "Memory read fault: address 0x" << std::hex << addr << " is not mapped";
+        throw std::runtime_error(oss.str());
     }
     
     uint64_t offset = addr - region->base_addr;
@@ -63,8 +65,9 @@ uint8_t VirtualPCB::read_memory(uint64_t addr) const {
 void VirtualPCB::write_memory(uint64_t addr, uint8_t value) {
     MemoryRegion* region = get_region(addr);
     if (!region) {
-        throw std::runtime_error("Memory write fault: address 0x" + 
-                               std::to_string(addr) + " is not mapped");
+        std::ostringstream oss;
+        oss << "Memory write fault: address 0x" << std::hex << addr << " is not mapped";
+        throw std::runtime_error(oss.str());
     }
     
     uint64_t offset = addr - region->base_addr;
@@ -72,14 +75,36 @@ void VirtualPCB::write_memory(uint64_t addr, uint8_t value) {
 }
 
 void VirtualPCB::read_memory_block(uint64_t addr, uint8_t* buffer, size_t size) const {
-    for (size_t i = 0; i < size; ++i) {
-        buffer[i] = read_memory(addr + i);
+    if (size == 0) return;
+    
+    // Check if entire block is within a single region for optimization
+    const MemoryRegion* region = get_region(addr);
+    if (region && region->contains(addr + size - 1)) {
+        // Fast path: entire block in one region
+        uint64_t offset = addr - region->base_addr;
+        std::memcpy(buffer, &region->data[offset], size);
+    } else {
+        // Slow path: block spans regions or needs validation
+        for (size_t i = 0; i < size; ++i) {
+            buffer[i] = read_memory(addr + i);
+        }
     }
 }
 
 void VirtualPCB::write_memory_block(uint64_t addr, const uint8_t* buffer, size_t size) {
-    for (size_t i = 0; i < size; ++i) {
-        write_memory(addr + i, buffer[i]);
+    if (size == 0) return;
+    
+    // Check if entire block is within a single region for optimization
+    MemoryRegion* region = get_region(addr);
+    if (region && region->contains(addr + size - 1)) {
+        // Fast path: entire block in one region
+        uint64_t offset = addr - region->base_addr;
+        std::memcpy(&region->data[offset], buffer, size);
+    } else {
+        // Slow path: block spans regions or needs validation
+        for (size_t i = 0; i < size; ++i) {
+            write_memory(addr + i, buffer[i]);
+        }
     }
 }
 

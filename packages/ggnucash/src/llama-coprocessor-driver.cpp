@@ -9,8 +9,9 @@ namespace ggnucash {
 namespace vdev {
 
 // Helper function for C++14 compatibility (std::clamp is C++17)
+// Named differently to avoid confusion with std::clamp
 template<typename T>
-T clamp(T value, T min_val, T max_val) {
+T clamp_value(T value, T min_val, T max_val) {
     return std::min(std::max(value, min_val), max_val);
 }
 
@@ -662,24 +663,24 @@ NPUGenome NPUOntogenesis::mutate_genome(const NPUGenome& parent) {
     
     // Mutate ontological genes
     for (auto& gene : mutated.genes.ontological) {
-        gene = clamp(gene + dis(gen), 0.0, 1.0);
+        gene = clamp_value(gene + dis(gen), 0.0, 1.0);
     }
     
     // Mutate other gene types similarly
     for (auto& gene : mutated.genes.teleological) {
-        gene = clamp(gene + dis(gen), 0.0, 1.0);
+        gene = clamp_value(gene + dis(gen), 0.0, 1.0);
     }
     
     for (auto& gene : mutated.genes.cognitive) {
-        gene = clamp(gene + dis(gen), 0.0, 1.0);
+        gene = clamp_value(gene + dis(gen), 0.0, 1.0);
     }
     
     for (auto& gene : mutated.genes.integrative) {
-        gene = clamp(gene + dis(gen), 0.0, 1.0);
+        gene = clamp_value(gene + dis(gen), 0.0, 1.0);
     }
     
     for (auto& gene : mutated.genes.evolutionary) {
-        gene = clamp(gene + dis(gen), 0.0, 1.0);
+        gene = clamp_value(gene + dis(gen), 0.0, 1.0);
     }
     
     return mutated;
