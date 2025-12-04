@@ -1,0 +1,271 @@
+{
+  "packages": [
+    {
+      "name": "TH",
+      "path": "packages/TH",
+      "has_cmake": true,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "This is the C/CPU implementation of Tensors et al"
+    },
+    {
+      "name": "argcheck",
+      "path": "packages/argcheck",
+      "has_cmake": true,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "A powerful function argument checker and function overloading system for"
+    },
+    {
+      "name": "class",
+      "path": "packages/class",
+      "has_cmake": false,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "Object Classes for Lua"
+    },
+    {
+      "name": "cunn",
+      "path": "packages/cunn",
+      "has_cmake": true,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "<a name=\"cunn.dok\"/>"
+    },
+    {
+      "name": "cutorch",
+      "path": "packages/cutorch",
+      "has_cmake": true,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "** [NOTE on API changes and versioning](#api-changes-and-versioning) **"
+    },
+    {
+      "name": "cwrap",
+      "path": "packages/cwrap",
+      "has_cmake": true,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "The __cwrap__ package helps you to automate the generation of Lua/C wrappers"
+    },
+    {
+      "name": "demos",
+      "path": "packages/demos",
+      "has_cmake": true,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "All the demos/tutorials provided in this repo require Torch7 to be installed,"
+    },
+    {
+      "name": "distro",
+      "path": "packages/distro",
+      "has_cmake": true,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "[![Build Status](https://travis-ci.org/torch/distro.svg?branch=master)](https://travis-ci.org/torch/"
+    },
+    {
+      "name": "ezinstall",
+      "path": "packages/ezinstall",
+      "has_cmake": false,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "Note that if you are coming from a previous version you are advise to clean up the old installation "
+    },
+    {
+      "name": "ffi",
+      "path": "packages/ffi",
+      "has_cmake": true,
+      "has_rockspec": true,
+      "has_readme": true,
+      "description": "The FFI functions have been integrated into the torch7 core."
+    },
+    {
+      "name": "gnuplot",
+      "path": "packages/gnuplot",
+      "has_cmake": false,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "<a name=\"gnuplot.dok\"></a>"
+    },
+    {
+      "name": "graph",
+      "path": "packages/graph",
+      "has_cmake": true,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "This package provides graphical computation for [Torch](https://github.com/torch/torch7/blob/master/"
+    },
+    {
+      "name": "image",
+      "path": "packages/image",
+      "has_cmake": true,
+      "has_rockspec": true,
+      "has_readme": true,
+      "description": "[![Build Status](https://travis-ci.org/torch/image.svg)](https://travis-ci.org/torch/image)"
+    },
+    {
+      "name": "luajit-rocks",
+      "path": "packages/luajit-rocks",
+      "has_cmake": true,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "CMake-based LuaJIT + Luarocks"
+    },
+    {
+      "name": "nn",
+      "path": "packages/nn",
+      "has_cmake": true,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "[![Build Status](https://travis-ci.org/torch/nn.svg?branch=master)](https://travis-ci.org/torch/nn)"
+    },
+    {
+      "name": "nngraph",
+      "path": "packages/nngraph",
+      "has_cmake": true,
+      "has_rockspec": true,
+      "has_readme": true,
+      "description": "[![Build Status](https://travis-ci.org/torch/nngraph.svg)](https://travis-ci.org/torch/nngraph)"
+    },
+    {
+      "name": "optim",
+      "path": "packages/optim",
+      "has_cmake": true,
+      "has_rockspec": true,
+      "has_readme": true,
+      "description": "<a name='optim.dok'></a>"
+    },
+    {
+      "name": "paths",
+      "path": "packages/paths",
+      "has_cmake": true,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "<a name=\"paths.dok\"></a>"
+    },
+    {
+      "name": "qtlua",
+      "path": "packages/qtlua",
+      "has_cmake": true,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "QtLua: a Lua interface to QT"
+    },
+    {
+      "name": "rnn",
+      "path": "packages/rnn",
+      "has_cmake": true,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "This is a recurrent neural network (RNN) library that extends Torch's nn."
+    },
+    {
+      "name": "rocks",
+      "path": "packages/rocks",
+      "has_cmake": false,
+      "has_rockspec": true,
+      "has_readme": true,
+      "description": "This is the official rock server for the Torch ecosystem. Note that all"
+    },
+    {
+      "name": "sdl2-ffi",
+      "path": "packages/sdl2-ffi",
+      "has_cmake": false,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "A LuaJIT interface to SDL2"
+    },
+    {
+      "name": "senna",
+      "path": "packages/senna",
+      "has_cmake": true,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "*Disclaimer*: while this glue code is provided under a BSD license, _SENNA_ is not. Please refer"
+    },
+    {
+      "name": "sundown-ffi",
+      "path": "packages/sundown-ffi",
+      "has_cmake": true,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "[![Build Status](https://travis-ci.org/torch/sundown-ffi.svg)](https://travis-ci.org/torch/sundown-f"
+    },
+    {
+      "name": "sys",
+      "path": "packages/sys",
+      "has_cmake": true,
+      "has_rockspec": true,
+      "has_readme": true,
+      "description": "Note: some functions only work on UNIX systems."
+    },
+    {
+      "name": "tds",
+      "path": "packages/tds",
+      "has_cmake": true,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "Data structures which do not rely on Lua memory allocator, nor being"
+    },
+    {
+      "name": "threads",
+      "path": "packages/threads",
+      "has_cmake": true,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "[![Build Status](https://travis-ci.org/torch/threads.svg)](https://travis-ci.org/torch/threads)"
+    },
+    {
+      "name": "torch.github.io",
+      "path": "packages/torch.github.io",
+      "has_cmake": false,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "How to run the website:"
+    },
+    {
+      "name": "torch7",
+      "path": "packages/torch7",
+      "has_cmake": true,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "[![Join the chat at https://gitter.im/torch/torch7](https://badges.gitter.im/Join%20Chat.svg)](https"
+    },
+    {
+      "name": "trepl",
+      "path": "packages/trepl",
+      "has_cmake": true,
+      "has_rockspec": true,
+      "has_readme": true,
+      "description": "______             __   |  Torch7"
+    },
+    {
+      "name": "tutorials",
+      "path": "packages/tutorials",
+      "has_cmake": false,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "Machine Learning with Torch7"
+    },
+    {
+      "name": "xlua",
+      "path": "packages/xlua",
+      "has_cmake": true,
+      "has_rockspec": true,
+      "has_readme": true,
+      "description": "[![Build Status](https://travis-ci.org/torch/xlua.svg)](https://travis-ci.org/torch/xlua)"
+    },
+    {
+      "name": "xt",
+      "path": "packages/xt",
+      "has_cmake": true,
+      "has_rockspec": false,
+      "has_readme": true,
+      "description": "The wrapper respects the semantics of Torch (in terms of default"
+    }
+  ],
+  "total_count": 33,
+  "cmake_count": 26,
+  "luarocks_count": 8
+}

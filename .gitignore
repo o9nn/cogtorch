@@ -1,0 +1,52 @@
+# Build artifacts
+build/
+Build/
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+
+# Lua/LuaJIT
+*.luac
+luac.out
+
+# LuaRocks
+*.rock
+*.src.rock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.log
+
+# Testing
+test-output/
+*.test
+
+# Documentation builds
+doc/html/
+doc/latex/
+
+# Package manager
+node_modules/
+.npm/
+
+# OS
+Thumbs.db
